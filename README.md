@@ -72,7 +72,7 @@ Stage 5 (Động cơ Học máy - ML Valuation Engine): Huấn luyện mô hình
 
 Stage 6 (Tầng trực quan hóa - Visualization): Truyền tải kết quả phân tích và định giá lên giao diện người dùng.
 
-<img width="936" height="325" alt="anh 1" src="https://github.com/user-attachments/assets/1f46e221-0977-436a-9163-c41ce9e40d3e" />
+![anh 1](https://github.com/user-attachments/assets/1f46e221-0977-436a-9163-c41ce9e40d3e)
 
 
 📈 4. PHÂN TÍCH KHÁM PHÁ DỮ LIỆU CHUYÊN SÂU (DEEP-DIVE EDA INSIGHTS)
