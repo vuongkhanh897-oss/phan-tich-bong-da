@@ -72,7 +72,8 @@ Stage 5 (Động cơ Học máy - ML Valuation Engine): Huấn luyện mô hình
 
 Stage 6 (Tầng trực quan hóa - Visualization): Truyền tải kết quả phân tích và định giá lên giao diện người dùng.
 
-📸 Ảnh minh họa Giao diện Dashboard Tổng quan:
+<img width="936" height="325" alt="anh 1" src="https://github.com/user-attachments/assets/1f46e221-0977-436a-9163-c41ce9e40d3e" />
+
 
 📈 4. PHÂN TÍCH KHÁM PHÁ DỮ LIỆU CHUYÊN SÂU (DEEP-DIVE EDA INSIGHTS)
 Thông qua các công cụ truy vấn và phân tích đa chiều trên tập dữ liệu hợp nhất, đồ án đã khai thác được nhiều tri thức thực tiễn quan trọng:
@@ -90,7 +91,8 @@ Việc phân tích chuỗi thời gian qua các mùa giải minh chứng rằng 
 4.3. Vai trò quyết định của chỉ số Tiềm năng (potential) ở nhóm cầu thủ trẻ
 Phân tích tương quan theo nhóm tuổi cho thấy đối với các cầu thủ dưới 22 tuổi, biến số potential đóng vai trò là trọng số chi phối mạnh mẽ nhất định hình giá trị thị trường, thể hiện bản chất "đầu tư vào tương lai" của thị trường chuyển nhượng hiện đại.
 
-📸 Ảnh minh họa Biểu đồ Phân tích EDA:
+<img width="673" height="322" alt="anh 2" src="https://github.com/user-attachments/assets/6609062a-ddb1-4be0-b673-27cfc06b4bc3" />
+
 
 🤖 5. PHƯƠNG PHÁP VÀ MÔ HÌNH HỌC MÁY (MACHINE LEARNING VALUATION METHODOLOGY)
 5.1. Lựa chọn thuật toán và cơ chế học tập
@@ -117,11 +119,13 @@ Hệ thống được đóng gói thành một ứng dụng Web trực quan, cho
 
 🔍 Tra cứu & Quỹ đạo sự nghiệp: Cho phép chọn cầu thủ và tra cứu thông tin linh hoạt theo từng năm phiên bản tùy ý (2020 – 2025) với các biểu đồ so sánh giá trị thực tế và giá trị dự đoán bởi AI.
 
-📸 Ảnh minh họa:
+<img width="207" height="341" alt="anh 3" src="https://github.com/user-attachments/assets/d0f23066-6ea5-4d1d-bd9f-e7ccaf769e14" />
+
 
 ⚖️ So sánh đối đầu (Head-to-Head): Đặt hai cầu thủ lên bàn cân so sánh song song toàn bộ các chỉ số chuyên môn và chênh lệch định giá theo từng năm cụ thể.
 
-📸 Ảnh minh họa:
+<img width="653" height="347" alt="anh 4" src="https://github.com/user-attachments/assets/4ea14d85-52cf-49c6-8c57-710728af0585" />
+
 
 🏆 Top cầu thủ giá trị nhất: Bảng xếp hạng động hiển thị các ngôi sao đắt giá nhất hệ thống theo từng tiêu chí lựa chọn.
 
