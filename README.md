@@ -94,7 +94,7 @@ Quá trình học của thuật toán: Dữ liệu được chia tập huấn lu
 7. Trực Quan Hóa & Giao Diện Web Dashboard (Visualization)
 Kết quả phân tích sau khi qua bộ lọc mô hình được xuất ra tệp dữ liệu sạch và tích hợp trực tiếp lên giao diện Web tương tác:
 
-![image_alt](https://github.com/vuongkhanh897-oss/phan-tich-bong-da/blob/main/images/anh.1.png?raw=true)
+![image_alt](https://github.com/vuongkhanh897-oss/phan-tich-bong-da/blob/17a040c6f623ec8b39a8d9a7e432ca6993d50c45/anh.1.png)
 ![image_alt](https://github.com/vuongkhanh897-oss/phan-tich-bong-da/blob/main/images/anh.2.png?raw=true)
 ![image_alt](https://github.com/vuongkhanh897-oss/phan-tich-bong-da/blob/main/images/anh.3.png?raw=true)
 ![image_alt](https://github.com/vuongkhanh897-oss/phan-tich-bong-da/blob/main/images/anh.4.png?raw=true)
