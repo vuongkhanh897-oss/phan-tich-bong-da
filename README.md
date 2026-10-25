@@ -94,10 +94,10 @@ Quá trình học của thuật toán: Dữ liệu được chia tập huấn lu
 7. Trực Quan Hóa & Giao Diện Web Dashboard (Visualization)
 Kết quả phân tích sau khi qua bộ lọc mô hình được xuất ra tệp dữ liệu sạch và tích hợp trực tiếp lên giao diện Web tương tác:
 
-[![Anh 1](https://raw.githubusercontent.com/vuongkhanh897-oss/phan-tich-bong-da/main/images/anh.1.png)](https://github.com/vuongkhanh897-oss/phan-tich-bong-da/blob/d391f9d54f37d06bf6775f211f4c381aa483332b/anh.1.png)
-![Anh 2](https://raw.githubusercontent.com/vuongkhanh897-oss/phan-tich-bong-da/main/images/anh.2.png)
-![Anh 3](https://raw.githubusercontent.com/vuongkhanh897-oss/phan-tich-bong-da/main/images/anh.3.png)
-![Anh 4](https://raw.githubusercontent.com/vuongkhanh897-oss/phan-tich-bong-da/main/images/anh.4.png)
+![Anh 1](https://github.com/vuongkhanh897-oss/phan-tich-bong-da/raw/main/images/anh.1.png)
+![Anh 2](https://github.com/vuongkhanh897-oss/phan-tich-bong-da/raw/main/images/anh.2.png)
+![Anh 3](https://github.com/vuongkhanh897-oss/phan-tich-bong-da/raw/main/images/anh.3.png)
+![Anh 4](https://github.com/vuongkhanh897-oss/phan-tich-bong-da/raw/main/images/anh.4.png)
 8. Kết Luận Và Hướng Phát Triển Trong Tương Lai
 8.1. Kết luận
 Đồ án đã xây dựng thành công một hệ thống xử lý dữ liệu và định giá cầu thủ tự động khép kín (End-to-End Pipeline), từ khâu thu thập, làm sạch dữ liệu thô cho đến việc huấn luyện mô hình học máy.
