@@ -42,34 +42,82 @@ phan-tich-bong-da/
 ├── football_raw.csv         # Tập dữ liệu thô ban đầu
 ├── requirements.txt         # Danh sách thư viện phụ thuộc Python
 └── README.md                # Tài liệu kỹ thuật dự án
-3. Quy Trình Xử Lý Dữ Liệu Thô 
+3. Quy Trình Xử Lý Dữ Liệu Thô (ETL & Data Cleaning Pipeline)
 Dữ liệu ban đầu (football_raw.csv) chứa nhiều nhiễu, giá trị khuyết và định dạng chưa chuẩn. Hệ thống thực hiện các bước xử lý sau trước khi đưa vào mô hình:
-[ football_raw.csv ] 
-         │
-         ▼
+[ Dữ liệu thô: football_raw.csv ]
+               │
+               ▼
  1. Xử lý Missing Values ──> Lọc bỏ hoặc điền giá trị trung vị (Median) cho các cột thiếu thông tin.
-         │
-         ▼
+               │
+               ▼
  2. Chuẩn hóa định dạng ───> Chuyển đổi chuỗi tiền tệ (EUR, triệu/tỷ) thành kiểu số thực (float).
-         │
-         ▼
+               │
+               ▼
  3. Mã hóa biến phân loại ──> Chuyển đổi vị trí, quốc tịch sang dạng số nguyên/vector để máy hiểu.
-Xử lý giá trị khuyết (Missing Values): Loại bỏ các dòng dữ liệu bị khuyết thông tin cốt lõi (như thiếu giá trị định giá hoặc số phút thi đấu) và sử dụng giá trị trung vị (median) để lấp đầy các thuộc tính phụ nhằm bảo toàn phân phối thống kê.Chuẩn hóa dữ liệu số: Ép kiểu toàn bộ các thuộc tính tài chính, chỉ số thể lực và kỹ thuật về dạng số chuẩn (int64, float64).4. Trích Xuất & Lựa Chọn Đặc Trưng (Feature Engineering)Để tối ưu hóa độ chính xác của mô hình, hệ thống tiến hành trích xuất các nhóm đặc trưng trọng yếu:Nhóm Nhân khẩu học: Độ tuổi (age) – yếu tố quyết định tiềm năng phát triển và biên độ giá trị tương lai của cầu thủ.Nhóm Hiệu suất chuyên môn: Số bàn thắng (goals), số pha kiến tạo (assists), tổng số phút thi đấu, tỷ lệ chuyền bóng chính xác.Nhóm Thị trường & Hợp đồng: Uy tín câu lạc bộ chủ quản, thời hạn hợp đồng còn lại.5. Mô Hình Học Máy & Cơ Chế Hoạt Động (ML Valuation Engine)Bản chất bài toán: Đây là bài toán Hồi quy có giám sát (Supervised Regression) do mục tiêu cần dự đoán là một biến số liên tục (value_eur).Luồng hoạt động của thuật toán:Phân chia tập dữ liệu: Dữ liệu sau khi làm sạch được chia theo tỷ lệ 80% cho tập huấn luyện (Train Set) và 20% cho tập kiểm thử (Test Set).Quá trình huấn luyện (Training): Thuật toán hồi quy trong thư viện Scikit-learn tiến hành quét qua ma trận đặc trưng đầu vào ($X$) để học quy luật kết hợp với nhãn thực tế ($y$).Tối ưu hóa trọng số (Optimization): Mô hình tự động điều chỉnh các trọng số (weights) thông qua hàm tối ưu hóa nhằm thu hẹp khoảng cách giữa giá trị dự đoán và giá trị thực tế trên thị trường.6. Đánh Giá Hiệu Suất & Sai Số Mô Hình (Evaluation Metrics)Để chứng minh độ tin cậy của mô hình trước khi đưa vào ứng dụng thực tế, hệ thống đo lường thông qua các chỉ số tiêu chuẩn:MAE (Mean Absolute Error): Đo lường mức độ lệch tuyệt đối trung bình giữa giá dự đoán và giá thực tế (đơn vị: triệu EUR).RMSE (Root Mean Squared Error): Căn bậc hai sai số bình phương trung bình, giúp kiểm soát tốt các trường hợp dự đoán sai lệch lớn.Hệ số xác định (R-Squared Score): Phản ánh mức độ phần trăm mà các đặc trưng đầu vào giải thích được sự biến động giá trị của cầu thủ trên thị trường.7. Trực Quan Hóa & Giao Diện Web Dashboard (Visualization)Kết quả phân tích sau khi qua bộ lọc mô hình được xuất ra tệp dữ liệu sạch và tích hợp trực tiếp lên giao diện Web tương tác:7.1. Phân tích cấu trúc dữ liệu tổng quan7.2. Khảo sát tương quan giữa chỉ số tổng quát và giá trị thị trường7.3. Biểu đồ phân phối định giá cầu thủ trên thị trường7.4. Giao diện Web Dashboard so sánh trực tiếp hai cầu thủ
-9. Kết Luận Và Hướng Phát Triển Trong Tương Lai
-9.1. Kết luận
+
+4. Trích Xuất & Lựa Chọn Đặc Trưng (Feature Engineering)
+Để tối ưu hóa độ chính xác của mô hình, hệ thống tiến hành trích xuất các nhóm đặc trưng trọng yếu:
+
+Nhóm Nhân khẩu học: Độ tuổi (age) – yếu tố quyết định tiềm năng phát triển và biên độ giá trị tương lai của cầu thủ.
+
+Nhóm Hiệu suất chuyên môn: Số bàn thắng (goals), số pha kiến tạo (assists), tổng số phút thi đấu, tỷ lệ chuyền bóng chính xác.
+
+Nhóm Thị trường & Hợp đồng: Uy tín câu lạc bộ chủ quản, thời hạn hợp đồng còn lại.
+5. Mô Hình Học Máy & Cơ Chế Hoạt Động (ML Valuation Engine)
+Dưới đây là sơ đồ kiến trúc luồng vận hành chi tiết thể hiện cách mô hình học máy tiếp nhận dữ liệu đầu vào, xử lý toán học và trả về kết quả dự đoán:
+CÁC ĐẶC TRƯNG ĐẦU VÀO (X):
+  • Độ tuổi cầu thủ (Age)
+  • Số bàn thắng & kiến tạo (Goals/Assists)
+  • Hiệu suất thi đấu mỗi trận
+  • Uy tín câu lạc bộ & Thời hạn hợp đồng
+          │
+          │  (Đưa vào ma trận tính toán)
+          ▼
+  ┌─────────────────────────────────────────────────┐
+  │         MÔ HÌNH HỒI QUY (REGRESSION MODEL)      │
+  │  • Thuật toán học máy tự động học quy luật      │
+  │  • Điều chỉnh trọng số (Weights) của từng chỉ số │
+  └──────────────────────┬──────────────────────────┘
+                         │
+                         ▼
+  KẾT QUẢ ĐẦU RA (PREDICTION):
+  • Giá trị chuyển nhượng dự đoán (Predicted Value)
+          │
+          │  (So sánh với giá trị thực tế y)
+          ▼
+  ĐÁNH GIÁ SAI SỐ (EVALUATION):
+  • Đo lường mức độ chênh lệch qua các chỉ số MAE, RMSE, R²
+Bản chất bài toán: Đây là bài toán Hồi quy có giám sát (Supervised Regression) do mục tiêu cần dự đoán là một biến số liên tục (value_eur).
+
+Quá trình học của thuật toán: Dữ liệu được chia tập huấn luyện (80%) và kiểm thử (20%). Mô hình quét qua các đặc trưng đầu vào để tự động tối ưu hóa trọng số (weights), giảm thiểu sai số dự đoán so với thị trường thực tế.
+6. Đánh Giá Hiệu Suất & Sai Số Mô Hình (Evaluation Metrics)MAE (Mean Absolute Error): Đo lường mức độ lệch tuyệt đối trung bình giữa giá dự đoán và giá thực tế.RMSE (Root Mean Squared Error): Kiểm soát tốt các trường hợp dự đoán sai lệch lớn nhờ căn bậc hai sai số bình phương trung bình.Hệ số xác định ($R^2 Score$): Phản ánh mức độ phần trăm mà các đặc trưng đầu vào giải thích được sự biến động giá trị cầu thủ.
+7. Trực Quan Hóa & Giao Diện Web Dashboard (Visualization)
+Kết quả phân tích sau khi qua bộ lọc mô hình được xuất ra tệp dữ liệu sạch và tích hợp trực tiếp lên giao diện Web tương tác:
+
+### 7.1. Phân tích cấu trúc dữ liệu tổng quan
+![Phân tích dữ liệu tổng quan](./images/anh.1.png)
+
+### 7.2. Khảo sát tương quan giữa chỉ số tổng quát và giá trị thị trường
+![Tương quan chỉ số](./images/anh.2.png)
+
+### 7.3. Biểu đồ phân phối định giá cầu thủ trên thị trường
+![Phân phối định giá](./images/anh.3.png)
+
+### 7.4. Giao diện Web Dashboard so sánh trực tiếp hai cầu thủ
+![Giao diện Web Dashboard So sánh cầu thủ](./images/anh.4.png)
+8. Kết Luận Và Hướng Phát Triển Trong Tương Lai
+8.1. Kết luận
 Đồ án đã xây dựng thành công một hệ thống xử lý dữ liệu và định giá cầu thủ tự động khép kín (End-to-End Pipeline), từ khâu thu thập, làm sạch dữ liệu thô cho đến việc huấn luyện mô hình học máy.
 
 Mô hình Hồi quy đã thành công trong việc lượng hóa mối quan hệ giữa các chỉ số chuyên môn và giá trị kinh tế của cầu thủ, cung cấp cơ sở tham khảo minh bạch và khách quan cho giới chuyên môn.
 
 Giao diện Web Dashboard trực quan giúp người dùng dễ dàng tra cứu, lọc dữ liệu và so sánh tương quan trực tiếp giữa các cầu thủ trên thị trường.
 
-9.2. Hướng phát triển trong tương lai (Future Works)
-Để nâng cao độ chính xác và mở rộng tính ứng dụng thực tế của hệ thống trong giai đoạn tiếp theo, nhóm định hướng các cải tiến sau:
+8.2. Hướng phát triển trong tương lai (Future Works)
+Mở rộng nguồn dữ liệu thời gian thực (Real-time Data Integration): Tích hợp thêm API tự động cập nhật số liệu thống kê trận đấu hàng tuần thay vì chỉ dựa vào dữ liệu tĩnh (football_raw.csv).
 
-Mở rộng nguồn dữ liệu thời gian thực (Real-time Data Integration): Tích hợp thêm API tự động cập nhật số liệu thống kê trận đấu hàng tuần thay vì chỉ dựa vào dữ liệu tĩnh (football_raw.csv), giúp mô hình cập nhật sát với phong độ thực tế của cầu thủ.
+Nâng cấp thuật toán học máy nâng cao: Thử nghiệm và so sánh hiệu suất giữa các mô hình học máy phức tạp hơn (như Random Forest Regressor, XGBoost, hoặc Neural Networks).
 
-Nâng cấp thuật toán học máy nâng cao: Thử nghiệm và so sánh hiệu suất giữa các mô hình học máy phức tạp hơn (như Random Forest Regressor, XGBoost, hoặc Neural Networks) nhằm giảm thiểu sai số và nắm bắt tốt hơn các mối quan hệ phi tuyến tính phức tạp trên thị trường chuyển nhượng.
+Bổ sung tính năng dự báo xu hướng tương lai: Xây dựng thêm mô hình dự đoán biên độ tăng/giảm giá trị của cầu thủ trong các mùa giải tiếp theo dựa trên chuỗi thời gian (Time-series Forecasting).
 
-Bổ sung tính năng dự báo xu hướng tương lai: Xây dựng thêm mô hình dự đoán biên độ tăng/giảm giá trị của cầu thủ trong các mùa giải tiếp theo dựa trên chuỗi thời gian (Time-series Forecasting) và độ tuổi tiềm năng.
-
-Phát triển ứng dụng Web hoàn chỉnh: Đưa hệ thống lên môi trường đám mây (Cloud Deployment như Render, AWS hoặc Vercel) để công khai ứng dụng cho cộng đồng người dùng truy cập và trải nghiệm trực tuyến.
+Phát triển ứng dụng Web hoàn chỉnh: Đưa hệ thống lên môi trường đám mây (Cloud Deployment như Render, AWS hoặc Vercel) để công khai ứng dụng cho cộng đồng người dùng truy cập.
